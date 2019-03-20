@@ -16,14 +16,10 @@
     <h6>Tip: URL must have a format like: 'http://www.google.com.br' -> protocol://worldWideWebHost</h6>
 </div>
 
-<div id="messages" class="card" *ngIf="messages">
+<div id="messages" class="card" *ngFor="let message of messages">
     <div class="card-body">
-        <ul>
-            <li *ngFor="let error of errors">
-                <span class="title">Original URL:</span><span class="content">{{messages.originalUrl}}</span>
-                <span class="title">Shortened URL:</span><span class="content">{{messages.shortenedUrl}}</span>
-            </li>
-        </ul>
+        <span class="title">Original URL: <a class="content" [href]="message.originalUrl" target="_blank">{{message.originalUrl}}</a></span>
+        <span class="title">Shortened URL: <a class="content" [href]="message.shortenedUrl" target="_blank">{{message.shortenedUrl}}</a></span>
     </div>
 </div>
 

@@ -20,6 +20,18 @@
 
 #messages {
     margin-top: 50px;
+    color: rgb(49, 49, 49);
+
+    .title {
+        font-weight: bold;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+  
 }
 
 .modal {

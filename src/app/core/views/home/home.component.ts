@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   errors: string;
-  messages: MessageModel[];
+  messages: MessageModel[] = [];
   loading: boolean;
   @Input() url: string = '';
 
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   shorten(inputUrl: string) {
     const api = 'http://shortener-env.k6wamyyvfj.us-east-1.elasticbeanstalk.com/v1/shu/shorten';
     this.http.post(api , { 'url': inputUrl}).subscribe((res: MessageModel) => {
-      this.messages.push(res);
+      this.messages.unshift(res);
       this.url = '';
       this.errors = '';
       this.loading = false;
