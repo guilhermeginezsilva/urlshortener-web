@@ -1,0 +1,13 @@
+@import "styles";
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    min-width: pxToRem(610px);
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
