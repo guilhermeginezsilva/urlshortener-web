@@ -1,15 +1,36 @@
+
+
+
+
 <div class="input-group mb-10">
     <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Shorten Your URL</span>
     </div>
     <input #urlInput id="shorten_input" type="text" [value]="url" class="form-control" placeholder="type here with http" aria-label="Shorten input" aria-describedby="basic-addon1">
     <button type="button" class="btn btn-light" (click)="shorten(urlInput.value)">Shorten</button>
+</div>
 
+<div id="errors" class="alert alert-danger" *ngIf="errors">
+    <h5>Error: {{errors}}</h5>
     
+    <h6>Tip: URL must have a format like: 'http://www.google.com.br' -> protocol://worldWideWebHost</h6>
 </div>
 
 <div id="messages" class="card" *ngIf="messages">
     <div class="card-body">
-    {{messages}}
+        <ul>
+            <li *ngFor="let error of errors">
+                <span class="title">Original URL:</span><span class="content">{{messages.originalUrl}}</span>
+                <span class="title">Shortened URL:</span><span class="content">{{messages.shortenedUrl}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm show" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" *ngIf="loading">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <img src="assets/loading.gif"/>
+        </div>
     </div>
 </div>

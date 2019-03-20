@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+#errors {
+    margin-top: 50px;
+}
+
 .input-group {
     margin-top: 40vh;
     width: 50%;
@@ -16,4 +20,17 @@
 
 #messages {
     margin-top: 50px;
+}
+
+.modal {
+    width:fit-content;
+    height: fit-content;
+    display: block;
+    top: 40vh;
+    left: 50%;
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
 }
